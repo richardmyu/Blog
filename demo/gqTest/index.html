@@ -9,6 +9,7 @@
   <body>
     <div id="test" class="test"></div>
     <script>
+      console.log("%c ****** className ******", "color:red;font-size:20px;");
       console.time("querySelectorAll -- className");
       for (let i = 0; i < 100000; i++) {
         document.querySelectorAll(".test");
@@ -26,9 +27,9 @@
         document.getElementsByClassName(".test");
       }
       console.timeEnd("getElementsByClassName");
-      console.log("****************");
     </script>
     <script>
+      console.log("%c ****** id ******", "color:red;font-size:20px;");
       console.time("querySelectorAll -- id");
       for (let i = 0; i < 100000; i++) {
         document.querySelectorAll("#test");
@@ -46,9 +47,9 @@
         document.getElementById("#test");
       }
       console.timeEnd("getElementById");
-      console.log("****************");
     </script>
     <script>
+      console.log("%c ****** tagName ******", "color:red;font-size:20px;");
       console.time("querySelectorAll -- tagName");
       for (let i = 0; i < 100000; i++) {
         document.querySelectorAll("div");
