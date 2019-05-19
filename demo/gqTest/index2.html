@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="content 1a2b">
+        <ul>
+          <li class="item item-odd"></li>
+          <li class="item item-even"></li>
+          <li class="item item-odd"></li>
+          <li class="item item-even"></li>
+          <li class="item item-odd"></li>
+          <li class="item item-even"></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      console.log(document.getElementsByClassName("item"));
+      // HTMLCollection(6) [...]
+      console.log(document.getElementsByClassName("item item-odd"));
+      // HTMLCollection(3) [...]
+      console.log(document.getElementsByClassName("item content"));
+      // HTMLCollection []
+      console.log(document.querySelectorAll(".item"));
+      // NodeList(6) [...]
+      console.log(document.querySelectorAll(".item .item-odd"));
+      // NodeList []
+      console.log(document.querySelectorAll(".content .item-odd"));
+      // NodeList(3) [...]
+      console.log(document.querySelectorAll(".item, .item-odd"));
+      // NodeList(6) [...]
+      console.log(document.querySelectorAll(".item, .content"));
+      // NodeList(7) [...]
+
+      try {
+        var e1 = document.getElementsByClassName("1a2b");
+        var e2 = document.querySelectorAll(".1a2b");
+      } catch (e) {
+        console.error(e.message);
+      }
+
+      console.log(e1 && e1[0].className);
+      console.log(e2 && e2[0].className);
+    </script>
+  </body>
+</html>
