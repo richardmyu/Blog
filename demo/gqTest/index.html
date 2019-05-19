@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test" class="test"></div>
+    <script>
+      console.time("querySelectorAll -- className");
+      for (let i = 0; i < 100000; i++) {
+        document.querySelectorAll(".test");
+      }
+      console.timeEnd("querySelectorAll -- className");
+
+      console.time("querySelector -- className");
+      for (let i = 0; i < 100000; i++) {
+        document.querySelector(".test");
+      }
+      console.timeEnd("querySelector -- className");
+
+      console.time("getElementsByClassName");
+      for (let i = 0; i < 100000; i++) {
+        document.getElementsByClassName(".test");
+      }
+      console.timeEnd("getElementsByClassName");
+      console.log("****************");
+    </script>
+    <script>
+      console.time("querySelectorAll -- id");
+      for (let i = 0; i < 100000; i++) {
+        document.querySelectorAll("#test");
+      }
+      console.timeEnd("querySelectorAll -- id");
+
+      console.time("querySelector -- id");
+      for (let i = 0; i < 100000; i++) {
+        document.querySelector("#test");
+      }
+      console.timeEnd("querySelector -- id");
+
+      console.time("getElementById");
+      for (let i = 0; i < 100000; i++) {
+        document.getElementById("#test");
+      }
+      console.timeEnd("getElementById");
+      console.log("****************");
+    </script>
+    <script>
+      console.time("querySelectorAll -- tagName");
+      for (let i = 0; i < 100000; i++) {
+        document.querySelectorAll("div");
+      }
+      console.timeEnd("querySelectorAll -- tagName");
+
+      console.time("querySelector -- tagName");
+      for (let i = 0; i < 100000; i++) {
+        document.querySelector("div");
+      }
+      console.timeEnd("querySelector -- tagName");
+
+      console.time("getElementsByTagName");
+      for (let i = 0; i < 100000; i++) {
+        document.getElementsByTagName("div");
+      }
+      console.timeEnd("getElementsByTagName");
+    </script>
+  </body>
+</html>
