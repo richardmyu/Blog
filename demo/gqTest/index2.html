@@ -18,7 +18,22 @@
           <li class="item item-even"></li>
         </ul>
       </div>
+      <input type="text" name="input" />
     </div>
+    <script>
+      console.log(document.querySelector(".item").toString());
+      // [object HTMLLIElement]
+      console.log(document.querySelectorAll(".item").toString());
+      // [object NodeList]
+      console.log(document.getElementById("container").toString());
+      // [object HTMLDivElement]
+      console.log(document.getElementsByClassName("item").toString());
+      // [object HTMLCollection]
+      console.log(document.getElementsByTagName("li").toString());
+      // [object HTMLCollection]
+      console.log(document.getElementsByName("li").toString());
+      // [object NodeList]
+    </script>
     <script>
       console.log(document.getElementsByClassName("item"));
       // HTMLCollection(6) [...]

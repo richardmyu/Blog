@@ -7,30 +7,100 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="test">
-      <ul>
-        <li></li>
-      </ul>
-    </div>
+    <a href="" name="test" class="test" id="test">
+      <img src="" alt="" name="atoa" />
+      <span class="item"></span>
+    </a>
+
+    <a href="" name="test2">
+      <img src="" alt="" name="atoa" />
+    </a>
+
     <script>
-      // Demo 1
-      console.time("add li -- querySelectorAll");
-      var ul = document.querySelectorAll("ul")[0],
-        lis = ul.querySelectorAll("li");
-      for (var i = 0; i < lis.length; i++) {
-        ul.appendChild(document.createElement("li"));
+      console.log(
+        "%c ****** querySelectorAll ******",
+        "color:red;font-size:20px"
+      );
+      // Demo 2
+      console.time("querySelectorAll -- id");
+      var test1 = document.querySelectorAll("#test")[0];
+      var test1Child = test1.querySelectorAll("span");
+      for (var i = 0; i < test1Child.length; i++) {
+        test1.appendChild(document.createElement("span"));
       }
-      console.timeEnd("add li -- querySelectorAll");
+      console.timeEnd("querySelectorAll -- id");
+
+      console.time("querySelectorAll -- className");
+      var test2 = document.querySelectorAll(".test")[0];
+      var test2Child = test2.querySelectorAll("span");
+      for (var i = 0; i < test2Child.length; i++) {
+        test2.appendChild(document.createElement("span"));
+      }
+      console.timeEnd("querySelectorAll -- className");
+
+      console.time("querySelectorAll -- tagName");
+      var test3 = document.querySelectorAll("a")[0];
+      var test3Child = test3.querySelectorAll("span");
+      for (var i = 0; i < test3Child.length; i++) {
+        test3.appendChild(document.createElement("span"));
+      }
+      console.timeEnd("querySelectorAll -- tagName");
+
+      console.time("querySelectorAll -- name");
+      var test4 = document.querySelectorAll("a[name='test']")[0];
+      console.log(document.querySelectorAll("a[name='test']"));
+      console.log(test4);
+      var test4Child = test4.querySelectorAll("span");
+      for (var i = 0; i < test4Child.length; i++) {
+        test4.appendChild(document.createElement("span"));
+      }
+      console.timeEnd("querySelectorAll -- name");
     </script>
     <script>
-      // Demo 2
-      console.time("add li -- getElementsByTagName");
-      var ul = document.getElementsByTagName("ul")[0],
-        lis = ul.getElementsByTagName("li");
-      for (var i = 0; i < lis.length; i++) {
-        ul.appendChild(document.createElement("li"));
+      console.log(
+        "%c ****** getElementsByTagName ******",
+        "color:red;font-size:20px"
+      );
+      // Demo 4
+      console.time("getElementsByTagName");
+      var test = document.getElementsByTagName("a")[0],
+        testChild = test.getElementsByTagName("span");
+      // for (var i = 0; i < testChild.length; i++) {
+      //   test.appendChild(document.createElement("span"));
+      // }
+      console.timeEnd("getElementsByTagName");
+    </script>
+    <script>
+      console.log(
+        "%c ****** getElementsByClassName ******",
+        "color:red;font-size:20px"
+      );
+      // Demo 5
+      console.time("getElementsByClassName");
+      var test = document.getElementsByClassName("test"),
+        testChild = test[0].getElementsByClassName("item");
+      console.log(test);
+      // for (var i = 0; i < testChild.length; i++) {
+      //   var span = document.createElement("span");
+      //   span.classList.add("item");
+      //   test.appendChild(span);
+      // }
+      console.timeEnd("getElementsByClassName");
+    </script>
+    <script>
+      console.log(
+        "%c ****** getElementsByClassName ******",
+        "color:red;font-size:20px"
+      );
+      // Demo 6
+      console.time("getElementsByName");
+      var test = document.getElementsByName("test2");
+      for (var i = 0; i < test.length; i++) {
+        var a = document.createElement("a");
+        a.setAttribute("name", "test2");
+        test[0].parentNode.appendChild(a);
       }
-      console.timeEnd("add li -- getElementsByTagName");
+      console.timeEnd("getElementsByName");
     </script>
   </body>
 </html>
