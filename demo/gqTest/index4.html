@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li><li>2</li><li>3</li><li>4</li>
+    </ul>
+    <ul>
+      <li>11</li>
+      <li>22</li>
+      <li>33</li>
+      <li>44</li>
+    </ul>
+    <script>
+      var ul1 = document.getElementsByTagName("ul")[0],
+        lis11 = ul1.childNodes,
+        lis12 = ul1.children;
+      console.log(lis11.toString(), lis11.length); // "[object NodeList]" 9
+      console.log(lis11);
+      console.log(lis12.toString(), lis12.length); // "[object HTMLCollection]" 4
+      console.log(lis12);
+
+      var ul2 = document.getElementsByTagName("ul")[1],
+        lis21 = ul2.childNodes,
+        lis22 = ul2.children;
+      console.log(lis21.toString(), lis21.length); // "[object NodeList]" 9
+      console.log(lis21);
+      console.log(lis22.toString(), lis22.length); // "[object HTMLCollection]" 4
+      console.log(lis22);
+    </script>
+  </body>
+</html>
