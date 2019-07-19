@@ -48,8 +48,6 @@
 
       console.time("querySelectorAll -- name");
       var test4 = document.querySelectorAll("a[name='test']")[0];
-      console.log(document.querySelectorAll("a[name='test']"));
-      console.log(test4);
       var test4Child = test4.querySelectorAll("span");
       for (var i = 0; i < test4Child.length; i++) {
         test4.appendChild(document.createElement("span"));
@@ -65,6 +63,7 @@
       console.time("getElementsByTagName");
       var test = document.getElementsByTagName("a")[0],
         testChild = test.getElementsByTagName("span");
+      // 可能会导致页面崩溃
       // for (var i = 0; i < testChild.length; i++) {
       //   test.appendChild(document.createElement("span"));
       // }
@@ -77,9 +76,9 @@
       );
       // Demo 5
       console.time("getElementsByClassName");
-      var test = document.getElementsByClassName("test"),
-        testChild = test[0].getElementsByClassName("item");
-      console.log(test);
+      var test = document.getElementsByClassName("test")[0],
+        testChild = test.getElementsByClassName("item");
+      // 可能会导致页面崩溃
       // for (var i = 0; i < testChild.length; i++) {
       //   var span = document.createElement("span");
       //   span.classList.add("item");
@@ -95,11 +94,12 @@
       // Demo 6
       console.time("getElementsByName");
       var test = document.getElementsByName("test2");
-      for (var i = 0; i < test.length; i++) {
-        var a = document.createElement("a");
-        a.setAttribute("name", "test2");
-        test[0].parentNode.appendChild(a);
-      }
+      // 可能会导致页面崩溃
+      // for (var i = 0; i < test.length; i++) {
+      //   var a = document.createElement("a");
+      //   a.setAttribute("name", "test2");
+      //   test[0].parentNode.appendChild(a);
+      // }
       console.timeEnd("getElementsByName");
     </script>
   </body>
