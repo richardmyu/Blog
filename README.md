@@ -1,32 +1,5 @@
-# Menu
+# Blog
 
-### HTML/CSS
-
-[getElementsByClassName vs querySelectorAll](https://github.com/richardmyu/blog/issues/1)
-
-[a 链接的 rel 属性探究](https://github.com/richardmyu/blog/issues/2)
-
-[伪类 :focus](https://github.com/richardmyu/Blog/issues/9)
-
-[rem 适配](https://github.com/richardmyu/Blog/issues/5)
-
-### Javascript
-
-
-
-### Python
-
-[python 规范 -autopep8 安装记录](https://github.com/richardmyu/Blog/issues/7)
-
-[python之禅 #8](https://github.com/richardmyu/Blog/issues/8)
-
-
-
-### Tools
-
-[power shell 中 `git log` 中文显示问题](https://github.com/richardmyu/Blog/issues/11)
-
-[Git 不常用但有用的一些命令](https://github.com/richardmyu/Blog/issues/12)
-
-[Linux 一些小命令记录](https://github.com/richardmyu/Blog/issues/13)
-
+<section style="width:100%;background:#eee;border-radius:5px;box-shadow:2px 2px 4px rgba(105,105,105,0.7), 4px 4px 6px rgba(169,169,169,0.7), 6px 6px 8px rgba(211,211,211,0.7);">
+<p style="font-family:'Monda';font-size:18px;font-weight:600;line-height:1.8;padding:10px 20px;">Qualcosa si spense dentro di lui, come un ultimo tizzone rimasto vivo troppo a lungo sotto la cenere.</p>
+</section>
